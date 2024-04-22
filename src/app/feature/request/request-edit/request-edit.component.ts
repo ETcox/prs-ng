@@ -36,7 +36,7 @@ export class RequestEditComponent implements OnInit {
         });
       },
       error: (err) => {
-        console.log('Error editing Request: ', err);
+         this.message ='Error editing Request';
       },
       complete: () => {},
     });
@@ -45,7 +45,7 @@ export class RequestEditComponent implements OnInit {
         this.user = resp;
       },
       error: (err) => {
-        console.log('Request Create - error getting requests.');
+        this.message ='Request Create - error getting requests.';
       },
       complete: () => {},
     });

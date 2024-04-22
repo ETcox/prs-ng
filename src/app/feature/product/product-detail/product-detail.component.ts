@@ -19,7 +19,7 @@ export class ProductDetailComponent implements OnInit {
     private productSvc: ProductService,
     private router: Router,
     private route: ActivatedRoute
-  ) {}
+  ) { }
 
   ngOnInit() {
     // get the id from the url
@@ -33,9 +33,9 @@ export class ProductDetailComponent implements OnInit {
         });
       },
       error: (err) => {
-        console.log('Error editing Credit: ', err);
+        this.message = 'Error getting product';
       },
-      complete: () => {},
+      complete: () => { },
     });
   }
 
@@ -43,16 +43,15 @@ export class ProductDetailComponent implements OnInit {
     this.productSvc.deleteProduct(this.productId).subscribe({
       next: (resp) => {
         if (resp == false) {
-          console.log('ProductDetailComponent - error deleting product.');
           this.message = 'ProductDetailComponent - error deleting product.';
         } else {
           this.router.navigateByUrl('product/list');
         }
       },
       error: (err) => {
-        console.log('Error deleting product: ' + err.message);
+        this.message = 'Error deleting product';
       },
-      complete: () => {},
+      complete: () => { },
     });
   }
 

@@ -21,8 +21,8 @@ export class ProductCreateComponent implements OnInit {
     private productSvc: ProductService,
     private vendorSvc: VendorService,
     private router: Router
-  ) {}
-  
+  ) { }
+
 
   ngOnInit(): void {
     this.vendorSvc.getAllVendors().subscribe({
@@ -30,9 +30,9 @@ export class ProductCreateComponent implements OnInit {
         this.vendor = resp;
       },
       error: (err) => {
-        console.log('Vendor Create - error getting vendors.');
+        this.message = 'Error getting vendors';
       },
-      complete: () => {},
+      complete: () => { },
     });
   }
 
@@ -45,10 +45,9 @@ export class ProductCreateComponent implements OnInit {
         this.router.navigateByUrl('/product/list');
       },
       error: (err) => {
-        console.log('Error creating product: ', err);
         this.message = 'Error creating Product.';
       },
-      complete: () => {},
+      complete: () => { },
     });
   }
 }

@@ -32,7 +32,7 @@ export class UserEditComponent implements OnInit {
        });
       },
       error: (err) => {
-        console.log("Error editing User: ", err);
+        this.message = "Error editing user";
       }
     });
   }
@@ -46,7 +46,6 @@ export class UserEditComponent implements OnInit {
         this.router.navigateByUrl('/user/list');
       },
       error: (err) =>{
-        console.log("Error updating user: ", err);
         this.message = "Error updating user";
       },
       complete: () => {}

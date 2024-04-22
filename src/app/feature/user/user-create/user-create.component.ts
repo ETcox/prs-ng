@@ -21,7 +21,7 @@ export class UserCreateComponent implements OnInit {
 
   }
 
-  save(): void{
+  save(): void {
     // NOTE: Check for existence before save?
 
     this.userSvc.createUser(this.user).subscribe({
@@ -29,12 +29,12 @@ export class UserCreateComponent implements OnInit {
         this.user = resp;
         this.router.navigateByUrl('/user/list');
       },
-      error: (err) =>{
-        console.log("Error creating user: ", err);
+      error: (err) => {
         this.message = "Error creating user";
       },
-      complete: () => {}
+      complete: () => { }
     });
   }
+
 
 }

@@ -30,7 +30,6 @@ export class VendorCreateComponent implements OnInit {
         this.router.navigateByUrl('/vendor/list');
       },
       error: (err) =>{
-        console.log("Error creating vendor: ", err);
         this.message = "Error creating vendor";
       },
       complete: () => {}

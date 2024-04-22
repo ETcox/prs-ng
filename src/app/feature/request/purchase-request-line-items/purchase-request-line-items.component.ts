@@ -25,8 +25,8 @@ export class PurchaseRequestLineItemsComponent implements OnInit {
     private router: Router,
     private route: ActivatedRoute) { }
 
-   ngOnInit(): void {
-    
+  ngOnInit(): void {
+
     this.route.params.subscribe({
       next: (parms) => {
         this.requestId = parms['id'];
@@ -60,15 +60,15 @@ export class PurchaseRequestLineItemsComponent implements OnInit {
   delete(id: number): void {
     this.lineItemSvc.deleteLineItem(id).subscribe({
       next: (resp) => {
-        if(resp == false) {
+        if (resp == false) {
           this.message = 'Error on delete';
         } else
-        window.location.reload();
+          window.location.reload();
       },
       error: (err) => {
         this.message = 'Error on delete';
       },
-      complete: () => {}
+      complete: () => { }
     });
   }
 
@@ -81,7 +81,7 @@ export class PurchaseRequestLineItemsComponent implements OnInit {
       error: (err) => {
         this.message = 'Error submitting request';
       },
-      complete: () => {}
+      complete: () => { }
     });
   }
 

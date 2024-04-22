@@ -13,7 +13,6 @@ export class BaseComponent implements OnInit {
   
   loggedInUser: User = new User();
   userIsLoggedIn: boolean = false;
-  userIsAdmin: boolean = false;
   userIsReviewer: boolean = false;
   message?: string = undefined;
   
@@ -24,7 +23,6 @@ export class BaseComponent implements OnInit {
   ngOnInit(): void {
     this.loggedInUser = this.sysSvc.loggedInUser;
     this.userIsLoggedIn = this.loggedInUser.id != 0;
-    this.userIsAdmin = this.loggedInUser.admin;
     this.userIsReviewer = this.loggedInUser.reviewer;
   }
 }

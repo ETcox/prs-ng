@@ -28,14 +28,14 @@ export class VendorDetailComponent implements OnInit {
             this.vendor = parms;
           },
           error: (err) => {
-            console.log('Error gettingvendor by id: ', err);
+            this.message = 'Error getting vendor by id';
           },
           complete: () => {}
         });
         
       },
       error: (err) => {
-        console.log('Error getting id from url: ', err);
+        this.message = 'Error getting vendor by id';
       },
       complete: () => {}
     })
@@ -45,7 +45,7 @@ export class VendorDetailComponent implements OnInit {
     this.vendorSvc.deleteVendor(this.vendorId).subscribe({
       next: (resp) => {
         if (resp == false) {
-          console.log('VendorDetailComponent - error deleting vendor.');
+          
           this.message = 'VendorDetailComponent - error deleting vendor.';
         } else {
           this.router.navigateByUrl('vendor/list');
@@ -55,8 +55,7 @@ export class VendorDetailComponent implements OnInit {
         console.log(
           'VendorDetailComponent - Error deleting vendor: ' + err.message
         );
-        this.message =
-          'VendorDetailComponent - error deleting vendor: ' + err.message;
+        this.message = "Error deleting vendor";
       },
       complete: () => {},
     });

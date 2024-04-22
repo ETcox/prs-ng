@@ -33,7 +33,7 @@ export class RequestDetailComponent implements OnInit {
         });
       },
       error: (err) => {
-        console.log('Error getting request: ', err);
+        this.message = 'Error getting request';
       },
       complete: () => {},
     });
@@ -43,7 +43,6 @@ export class RequestDetailComponent implements OnInit {
     this.requestSvc.deleteRequest(this.requestId).subscribe({
       next: (resp) => {
         if (resp == false) {
-          console.log('RequestDetailComponent - error deleting request.');
           this.message = 'RequestDetailComponent - error deleting request.';
         } else {
           this.router.navigateByUrl('request/list');

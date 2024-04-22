@@ -32,7 +32,7 @@ export class VendorEditComponent implements OnInit {
        });
       },
       error: (err) => {
-        console.log("Error editing Vendor: ", err);
+        this.message = "Error updating vendor";
       }
     });
   }
@@ -46,7 +46,6 @@ export class VendorEditComponent implements OnInit {
         this.router.navigateByUrl('/vendor/list');
       },
       error: (err) =>{
-        console.log("Error updating vendor: ", err);
         this.message = "Error updating vendor";
       },
       complete: () => {}

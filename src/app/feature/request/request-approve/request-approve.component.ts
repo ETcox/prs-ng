@@ -42,7 +42,7 @@ export class RequestApproveComponent implements OnInit {
             this.request = resp;
           },
           error: (err) => {
-            this.message = err.message;
+            this.message = 'Error getting request';
           },
           complete: () => {}
         });
@@ -51,13 +51,13 @@ export class RequestApproveComponent implements OnInit {
             this.lineItems = resp;
           },
           error: (err) => {
-            this.message = err.message;
+            this.message = 'Error getting line item';
           },
           complete: () => {}
         });
       },
       error: (err) => {
-        this.message = err.message;
+        this.message = 'Error getting line item';
       },
       complete: () => {}
     });
@@ -87,7 +87,7 @@ export class RequestApproveComponent implements OnInit {
         this.router.navigateByUrl('/request/list');
       },
       error: (err) => {
-        this.message = err.message;
+        this.message = 'Error approving this request';
       },
       complete: () => {}
     });

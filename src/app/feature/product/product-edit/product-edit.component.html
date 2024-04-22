@@ -1,56 +1,55 @@
 <app-menu></app-menu>
 <div>
-    <span class="component-title">[{{ title }}]</span>
-    <p *ngIf="!product">Loading...</p>
-    <div *ngIf="product">
-      <main class="single">
-        <table class="table table-sm">
-            <tr>
-                <td style="color: white;">Vendor:</td>
-                <td>
-                  <select [(ngModel)]="product.vendor" class="rounded" [compareWith]="compVendor">
-                    <option *ngFor="let v of vendors" [ngValue]="v">
-                      {{ v.name }}
-                    </option>
-                  </select>
-                </td>
-              </tr>
-              <tr>
-                <td style="color: white;">PartNumber:</td>
-                <td>
-                  <input [(ngModel)]="product.partNumber" class="rounded" type="text">
-                </td>
-              </tr>
-              <tr>
-                <td style="color: white;">Name:</td>
-                <td>
-                  <input [(ngModel)]="product.name" class="rounded" type="text" />
-                </td>
-              </tr>
-              <tr>
-                <td style="color: white;">Price:</td>
-                <td>
-                  <input [(ngModel)]="product.price" class="rounded" type="number" />
-                </td>
-              </tr>
-              <tr>
-                <td style="color: white;">Unit:</td>
-                <td>
-                  <input [(ngModel)]="product.unit" class="rounded" type="text" />
-                </td>
-              </tr>
-              <tr>
-                <td style="color: white;">PhotoPath:</td>
-                <td>
-                  <input [(ngModel)]="product.photoPath" class="rounded" type="text" />
-                </td>
-              </tr>
-            </table>
-          </main>
-          <span
-            ><button (click)="save()" class="btn btn-sm btn-primary">
-              Save
-            </button></span>
-            <p style="color: white;"  *ngIf="message">{{ message }}</p>
-        </div>
-      </div>
+  <span class="component-title">[{{ title }}]</span>
+  <p *ngIf="!product">Loading...</p>
+  <div *ngIf="product">
+    <main class="single">
+      <table class="table table-sm">
+        <tr>
+          <td style="color: white;">Vendor:</td>
+          <td>
+            <select [(ngModel)]="product.vendor" class="rounded" [compareWith]="compVendor">
+              <option *ngFor="let v of vendors" [ngValue]="v">
+                {{ v.name }}
+              </option>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <td style="color: white;">PartNumber:</td>
+          <td>
+            <input [(ngModel)]="product.partNumber" class="rounded" type="text">
+          </td>
+        </tr>
+        <tr>
+          <td style="color: white;">Name:</td>
+          <td>
+            <input [(ngModel)]="product.name" class="rounded" type="text" />
+          </td>
+        </tr>
+        <tr>
+          <td style="color: white;">Price:</td>
+          <td>
+            <input [(ngModel)]="product.price" class="rounded" type="number" />
+          </td>
+        </tr>
+        <tr>
+          <td style="color: white;">Unit:</td>
+          <td>
+            <input [(ngModel)]="product.unit" class="rounded" type="text" />
+          </td>
+        </tr>
+        <tr>
+          <td style="color: white;">PhotoPath:</td>
+          <td>
+            <input [(ngModel)]="product.photoPath" class="rounded" type="text" />
+          </td>
+        </tr>
+      </table>
+    </main>
+    <span><button (click)="save()" class="btn btn-sm btn-primary">
+        Save
+      </button></span>
+    <p style="color: white;" *ngIf="message">{{ message }}</p>
+  </div>
+</div>

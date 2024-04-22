@@ -45,16 +45,13 @@ export class UserDetailComponent implements OnInit {
     this.userSvc.deleteUser(this.userId).subscribe({
       next: (resp) => {
         if (resp == false) {
-          console.log('UserDetailComponent - error deleting user.');
           this.message = 'UserDetailComponent - error deleting user.';
         } else {
           this.router.navigateByUrl('user/list');
         }
       },
       error: (err) => {
-        console.log(
-          'UserDetailComponent - Error deleting user: ' + err.message
-        );
+       
         this.message =
           'UserDetailComponent - error deleting user: ' + err.message;
       },

@@ -60,7 +60,7 @@ export class LineitemCreateComponent implements OnInit {
               
 
   save(): void {
-    // NOTE: Check for existence of product title before save?
+    
     this.lineItemSvc.createLineItem(this.lineItem).subscribe({
       next: (resp) => {
         this.lineItem = resp;

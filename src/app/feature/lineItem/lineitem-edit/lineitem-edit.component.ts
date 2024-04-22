@@ -45,19 +45,19 @@ export class LineitemEditComponent implements OnInit {
                 this.request = resp;
               }, 
               error: (err) => {
-                this.message = err.error.message;
+                this.message = 'Error getting lineitem';
               },
               complete: () => {}
             });
           }, 
           error: (err) => {
-            this.message = err.error.message;
+            this.message = 'Error getting lineitem';
           },
           complete: () => {}
         });
       }, 
       error: (err) => {
-        this.message = err.error.message;
+        this.message = 'Error getting request';
       },
       complete: () => {}
     });
@@ -66,13 +66,10 @@ export class LineitemEditComponent implements OnInit {
         this.products = resp;
       }, 
       error: (err) => {
-        this.message = err.error.message;
+        this.message = 'Error getting products';
       },
       complete: () => {}
     });
-    // if(!this.userIsLoggedIn || this.request.user.id != this.loggedInUser.id || this.request.status != 'NEW') {
-    //   this.router.navigateByUrl('/request/list');
-    // }
   }
 
   save(): void {
@@ -82,7 +79,7 @@ export class LineitemEditComponent implements OnInit {
         this.router.navigateByUrl('/request/lines/'+this.lineItem.request.id);
       }, 
       error: (err) => {
-        this.message = err.error.message;
+        this.message = 'Error editing line item';
       },
       complete: () => {}
     });

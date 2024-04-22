@@ -23,7 +23,7 @@ export class ProductEditComponent implements OnInit {
     private vendorSvc: VendorService,
     private router: Router,
     private route: ActivatedRoute
-  ) {}
+  ) { }
 
   ngOnInit(): void {
     this.route.params.subscribe({
@@ -36,18 +36,18 @@ export class ProductEditComponent implements OnInit {
         });
       },
       error: (err) => {
-        console.log('Error editing Product: ', err);
+        this.message = 'Error getting product';
       },
-      complete: () => {},
+      complete: () => { },
     });
     this.vendorSvc.getAllVendors().subscribe({
       next: (resp) => {
         this.vendors = resp;
       },
       error: (err) => {
-        console.log('Product Create - error getting products.');
+        this.message = 'Error getting vendors';
       },
-      complete: () => {},
+      complete: () => { },
     });
   }
 
@@ -59,10 +59,9 @@ export class ProductEditComponent implements OnInit {
         this.router.navigateByUrl('/product/list');
       },
       error: (err) => {
-        console.log('Error updating product: ', err);
         this.message = 'Error updating Product.';
       },
-      complete: () => {},
+      complete: () => { },
     });
   }
 
@@ -70,7 +69,7 @@ export class ProductEditComponent implements OnInit {
     return a && b && a.id === b.id;
   }
 
-  
+
 
 
 }
