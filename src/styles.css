@@ -1,1 +1,19 @@
 /* You can add global styles to this file, and also import other style files */
+div {
+    padding: 20px;
+  }
+ 
+  body {
+      background-image: url("src/assets/1463943117_f1a615bbda_b.jpg");
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-size: cover;
+  }
+
+  .table  {
+    background: rgba(255,255,255,0.5);
+    }
+
+  .component-title {
+    color: white;
+  }

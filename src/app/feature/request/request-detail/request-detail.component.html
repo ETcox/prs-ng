@@ -1,0 +1,138 @@
+<app-menu></app-menu>
+<div>
+    <span class="component-title">[{{ title }}]</span>
+    <p *ngIf="!request">Loading...</p>
+    <div *ngIf="request">
+      <main class="single">
+        <table class="table table-sm">
+          <tr>
+            <td style="color: white;">Id:</td>
+            <td>
+              <input
+                [(ngModel)]="request.id"
+                class="rounded"
+                type="text"
+                disabled
+              />
+            </td>
+          </tr>
+          <tr>
+            <td style="color: white;">User:</td>
+            <td>
+              <input
+                [(ngModel)]="request.user.firstname"
+                class="rounded"
+                type="text"
+                disabled
+              />
+            </td>
+          </tr>
+          <tr>
+            <td style="color: white;">Description:</td>
+            <td>
+              <input
+              [(ngModel)]="request.description"
+                class="rounded"
+                type="text"
+                disabled
+              > 
+            </td>
+          </tr>
+          <tr>
+            <td style="color: white;">Justification:</td>
+            <td>
+              <input
+                [(ngModel)]="request.justification"
+                class="rounded"
+                type="text"
+                disabled
+              />
+            </td>
+          </tr>
+          <tr>
+            <td style="color: white;">DateNeeded:</td>
+            <td>
+              <input
+                [(ngModel)]="request.dateNeeded"
+                class="rounded"
+                type="text"
+                disabled
+              />
+            </td>
+          </tr>
+          <tr>
+            <td style="color: white;">DeliveryMode:</td>
+            <td>
+              <input
+                [(ngModel)]="request.deliveryMode"
+                class="rounded"
+                type="text"
+                disabled
+              />
+            </td>
+          </tr>
+          <tr>
+            <td style="color: white;">Status:</td>
+            <td>
+              <input
+                [(ngModel)]="request.status"
+                class="rounded"
+                type="text"
+                disabled
+              />
+            </td>
+          </tr>
+          <tr>
+            <td style="color: white;">Total:</td>
+            <td>
+              <input
+                [(ngModel)]="request.total " 
+                class="rounded"
+                type="number"
+                disabled
+              />
+              
+            </td>
+          </tr>
+          <tr>
+            <td style="color: white;">SubmittedDate:</td>
+            <td>
+              <input
+                [(ngModel)]="request.submittedDate"
+                class="rounded"
+                type="text"
+                disabled
+              />
+            </td>
+          </tr>
+          <tr>
+            <td style="color: white;">ReasonForRejection:</td>
+            <td>
+              <input
+                [(ngModel)]="request.reasonForRejection"
+                class="rounded"
+                type="text"
+                disabled
+              />
+            </td>
+          </tr>
+        </table>
+      </main>
+      <span>
+        <span
+          ><a
+            routerLink="/request/edit/{{ request.id }}"
+            class="btn btn-sm btn-warning"
+            >Edit</a
+          ></span
+        >
+        <span>
+          |
+          <button (click)="delete()" class="btn btn-sm btn-danger">
+            Delete
+          </button></span
+        >
+      </span>
+      <p style="color: white;"  *ngIf="message">{{ message }}</p>
+    </div>
+  </div>

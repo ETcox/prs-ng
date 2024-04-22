@@ -1,0 +1,43 @@
+<app-menu></app-menu>
+<div>
+    <section class="heading">
+    <span class="page-title font-weight-bold font-italic" style="color: white;">[{{title}}]</span>
+    </section>
+    <table *ngIf="requests" class="table table-sm table-success table-hover">
+        <thead>
+        <tr>
+            <th>User</th>
+            <th>Description</th>
+            <th>Justification</th> 
+            <th>Date Needed</th>
+            <th>Status</th>
+            <th>Total</th>
+            <th>Submitted Date</th>
+            <th>Action</th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let request of requests">
+                <td>{{request.user.firstname}}</td>
+                <td>{{request.description}}</td>
+                <td>{{request.justification}}</td>
+                <td>{{request.dateNeeded}}</td>
+                <td>{{request.status}}</td>
+                <td>{{request.total | currency}}</td>
+                <td>{{request.submittedDate}}</td>
+                <td>
+                    <a routerLink="/request/approve/{{ request.id }}">
+                        <img width="20" height="20" src="assets/review.jpg" title="Add New" />  
+                    </a>
+                    
+                </td>
+               
+                
+            </tr>
+
+
+
+        </tbody>
+
+    </table>
+   
+</div>

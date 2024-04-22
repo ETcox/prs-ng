@@ -1,0 +1,13 @@
+<nav>
+    <ul width="100%">
+        <li style="color: rgb(20, 255, 36);">{{ title }}</li>
+        <li 
+        *ngFor="let mi of menuItems" title="{{mi.tooltip}}">
+            <a routerLink="{{mi.href}}">{{mi.display}}</a>
+           
+        </li>
+        <div class="contentcontainer med left" style="float: right; color: rgb(20, 255, 36);" >
+            {{welcomeMsg}}
+        </div>
+    </ul>
+</nav>

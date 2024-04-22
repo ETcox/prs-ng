@@ -1,0 +1,78 @@
+<app-menu></app-menu>
+<div>
+  <span class="component-title">[{{ title }}]</span>
+  <p *ngIf="!request">Loading...</p>
+  <div *ngIf="request">
+    <main class="single">
+      <table class="table table-sm">
+        <tr>
+
+          <th style="color: white;">Name:</th>
+          <th style="color: white;">Description:</th>
+          <th style="color: white;">Justification:</th>
+          <th style="color: white;">Status:</th>
+          <th style="color: white;">Total:</th>
+        </tr>
+        <tr>
+          <td>
+            <input [(ngModel)]="request.user.firstname + ' ' + request.user.lastname" class="rounded" type="text"
+              disabled />
+          </td>
+          <td>
+            <input [(ngModel)]="request.description" class="rounded" type="text" disabled>
+          </td>
+          <td>
+            <input [(ngModel)]="request.justification" class="rounded" type="text" disabled />
+          </td>
+          <td>
+            <input [(ngModel)]="request.status" class="rounded" type="text" disabled />
+          </td>
+          <td>
+            <input [(ngModel)]="request.total " class="rounded" type="number" disabled  />
+          </td>
+        </tr>
+      </table>
+
+
+      <div>
+        <span class="component-title">[{{ title2 }}]</span>
+        <a routerLink="/lineitem/create/{{requestId}}">
+          <img width="20" height="20" src="assets/add-icon.png" title="Add New" />
+        </a>
+
+
+        <table class="table table-sm">
+          <tr>
+
+            <th style="color: white;">Vendor:</th>
+            <th style="color: white;">Product:</th>
+            <th style="color: white;">Quantity:</th>
+            <th style="color: white;">Price:</th>
+            <th style="color: white;">Line Total:</th>
+            <th style="color: white;">Action:</th>
+          </tr>
+          <tbody>
+            <tr *ngFor="let line of lineItem">
+              <td>{{line.product.vendor.name}}</td>
+              <td>{{line.product.name}}</td>
+              <td>{{line.quantity}}</td>
+              <td>{{line.product.price | currency}}</td>
+              <td>{{line.product.price * line.quantity | currency}}</td>
+
+              <td>
+                <a routerLink="/lineitem/edit/{{ line.id }}">
+                  <img width="20" height="20" src="assets/pencil-icon.png" title="Edit LineItem" />
+                </a>
+                <a (click)="delete(line.id)">
+                  <img width="20" height="20" src="assets/delete.jpg" title="Delete Line Item" />
+                </a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </main>
+    <button (click)="submit()" class="btn btn-sm btn-primary">Submit</button>
+    <p style="color: white;"  *ngIf="message">{{ message }}</p>
+  </div>
+</div>
