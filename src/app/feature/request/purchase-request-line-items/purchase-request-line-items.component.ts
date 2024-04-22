@@ -60,9 +60,6 @@ export class PurchaseRequestLineItemsComponent implements OnInit {
   delete(id: number): void {
     this.lineItemSvc.deleteLineItem(id).subscribe({
       next: (resp) => {
-        if (resp == false) {
-          this.message = 'Error on delete';
-        } else
           window.location.reload();
       },
       error: (err) => {

@@ -9,7 +9,7 @@
                     <tr>
                         <td>Product: </td>
                         <td>
-                            <select [(ngModel)]="lineItem.product" class="rounded">
+                            <select [(ngModel)]="lineItem.product" class="rounded" [compareWith]="compProduct" >
                                 <option *ngFor="let p of products" [ngValue]="p">{{ p.name }} | {{ p.vendor.name }}
                                 </option>
                             </select>
@@ -27,6 +27,6 @@
         <span>
             <button (click)="save()" class="btn btn-sm btn-primary">Save</button>
         </span>
-        <p style="color: white;"  *ngIf="message" class="message">{{ message }}</p>
+        <p style="color: white;" *ngIf="message" class="message">{{ message }}</p>
     </div>
 </div>
