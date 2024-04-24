@@ -5,6 +5,7 @@ import { Product } from '../model/product';
 
 
 const URL: string = 'http://localhost:8080/api/products';
+//const URL: string = 'https://localhost:7090/api/products';
 
 @Injectable({
   providedIn: 'root'

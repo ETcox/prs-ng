@@ -4,6 +4,7 @@ import { Observable } from 'rxjs/internal/Observable';
 import { LineItem } from '../model/lineItem';
 
 const URL: string = 'http://localhost:8080/api/lineitems';
+//const URL: string = 'https://localhost:7090/api/lineitems';
 
 @Injectable({
   providedIn: 'root'

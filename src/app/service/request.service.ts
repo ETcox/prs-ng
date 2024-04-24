@@ -4,6 +4,7 @@ import { Observable } from 'rxjs/internal/Observable';
 import { Request } from '../model/request';
 
 const URL: string = 'http://localhost:8080/api/requests';
+//const URL: string = 'https://localhost:7090/api/requests';
 
 @Injectable({
   providedIn: 'root'
